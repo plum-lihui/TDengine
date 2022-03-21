@@ -78,6 +78,9 @@ endi
 
 print =============== select count(*) from child table
 sql select count(*) from ct1
+print ===> select count(*) from ct1
+print ===> rows: $rows
+print ===> rows0: $data00 $data01 $data02 $data03 $data04
 if $rows != 1 then 
   return -1
 endi
@@ -89,7 +92,10 @@ endi
 
 print =============== select count(column) from child table
 sql select count(ts), count(c1), count(c2), count(c3) from ct1
-print $data00 $data01 $data02  $data03
+print ===> select count(ts), count(c1), count(c2), count(c3) from ct1
+print ===> rows: $rows
+print ===> rows0: $data00 $data01 $data02 $data03 $data04
+
 if $data00 != 4 then 
   return -1
 endi
@@ -109,7 +115,9 @@ endi
 
 print =============== select min(column) from child table
 sql select min(c1), min(c2), min(c3) from ct1
-print $data00 $data01 $data02  $data03
+print ===> select min(c1), min(c2), min(c3) from ct1
+print ===> rows: $rows
+print ===> rows0: $data00 $data01 $data02 $data03 $data04
 if $rows != 1 then 
   return -1
 endi
@@ -125,7 +133,9 @@ endi
 
 print =============== select max(column) from child table
 sql select max(c1), max(c2), max(c3) from ct1
-print $data00 $data01 $data02  $data03
+print ===> select max(c1), max(c2), max(c3) from ct1
+print ===> rows: $rows
+print ===> rows0: $data00 $data01 $data02 $data03 $data04
 if $rows != 1 then 
   return -1
 endi
@@ -141,7 +151,9 @@ endi
 
 print =============== select sum(column) from child table
 sql select sum(c1), sum(c2), sum(c3) from ct1
-print $data00 $data01 $data02  $data03
+print ===> select sum(c1), sum(c2), sum(c3) from ct1
+print ===> rows: $rows
+print ===> rows0: $data00 $data01 $data02 $data03 $data04
 if $rows != 1 then 
   return -1
 endi
@@ -157,7 +169,9 @@ endi
 
 print =============== select column, from child table
 sql select c1, c2, c3 from ct1
-print $data00 $data01 $data02
+print ===> select c1, c2, c3 from ct1
+print ===> rows: $rows
+print ===> rows0: $data00 $data01 $data02 $data03 $data04
 #if $rows != 4 then 
 #  return -1
 #endi
@@ -191,8 +205,14 @@ print $data00 $data01 $data02
 #===================================================================
 #===================================================================
 
+
+return 
+
 #print =============== query data from stb
 #sql select * from stb
+#print ===> 
+#print ===> rows: $rows
+#print ===> rows0: $data00 $data01 $data02 $data03 $data04
 #if $rows != 4 then 
 #  return -1
 #endi
